@@ -1,7 +1,9 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:my_app/utils/stock_tile.dart';
+import 'package:my_app/model/stock_details.dart';
+import 'package:my_app/utils/show_dialouge.dart';
+import 'package:my_app/widgets/custom_textfield.dart';
+import 'package:my_app/widgets/stock_tile.dart';
+import 'package:my_app/widgets/whishlist_page.dart';
 
 class LandingScreen extends StatefulWidget {
   static const String routeName = '/landing-page';
@@ -13,6 +15,12 @@ class LandingScreen extends StatefulWidget {
 
 class _LandingScreenState extends State<LandingScreen> {
   final TextEditingController searchController = TextEditingController();
+  List<StockDetails> stocks = [
+    StockDetails(name: "IDFC", price: 110.40, category: "NSE"),
+    StockDetails(name: "IRFC", price: 140.95, category: "NSE"),
+    StockDetails(name: "JIOFIN", price: 344.65, category: "NSE"),
+    StockDetails(name: "ASIANPAITS", price: 2841.50, category: "NSE"),
+  ];
 
   @override
   void dispose() {
@@ -20,6 +28,9 @@ class _LandingScreenState extends State<LandingScreen> {
     searchController.dispose();
   }
 
+void onTap(){
+ 
+}
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -86,82 +97,14 @@ class _LandingScreenState extends State<LandingScreen> {
         ),
         body: TabBarView(
           children: [
-            SingleChildScrollView(
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 10,right: 10,left: 10),
-                    child: TextFormField(
-                      controller: searchController,
-                      decoration:  InputDecoration(
-                        hintText: 'search & add',
-                        prefixIcon: const Icon(
-                          Icons.search_sharp,
-                          color: Colors.grey,
-                        ),
-                        fillColor: const  Color.fromRGBO(50, 50, 50, 1),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                          borderSide: const BorderSide(
-                            width: 0,
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                          borderSide: const BorderSide(
-                            width: 0,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    width: MediaQuery.sizeOf(context).width,
-                    height: MediaQuery.sizeOf(context).height,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        color: const Color.fromRGBO(24, 32, 41, 2)),
-                    child: ListView.builder(
-                      itemCount: 5,
-                      itemBuilder: (context, index) {
-                        return StockTile(context: context);
-                      },
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              width: MediaQuery.sizeOf(context).width - 10,
-              margin: const EdgeInsets.all(10),
-              color: Colors.amberAccent,
-            ),
-            Container(
-              width: MediaQuery.sizeOf(context).width - 10,
-              margin: const EdgeInsets.all(10),
-              color: Colors.blueAccent,
-            ),
-            Container(
-              width: MediaQuery.sizeOf(context).width - 10,
-              margin: const EdgeInsets.all(10),
-              color: Colors.blueAccent,
-            ),
-            Container(
-              width: MediaQuery.sizeOf(context).width - 10,
-              margin: const EdgeInsets.all(10),
-              color: Colors.blueAccent,
-            ),
-            Container(
-              width: MediaQuery.sizeOf(context).width - 10,
-              margin: const EdgeInsets.all(10),
-              color: Colors.blueAccent,
-            ),
-            Container(
-              width: MediaQuery.sizeOf(context).width - 10,
-              margin: const EdgeInsets.all(10),
-              color: Colors.blueAccent,
-            ),
-          ],
+            WishlistPage(onTap: onTap, stocks: stocks),
+            WishlistPage(onTap: onTap, stocks: stocks),
+            WishlistPage(onTap: onTap, stocks: stocks),
+            WishlistPage(onTap: onTap, stocks: stocks),
+            WishlistPage(onTap: onTap, stocks: stocks),
+            WishlistPage(onTap: onTap, stocks: stocks),
+            WishlistPage(onTap: onTap, stocks: stocks),
+                      ],
         ),
       ),
     );
