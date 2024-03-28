@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/screens/bids_screen.dart';
 import 'package:my_app/screens/landing_screen.dart';
+import 'package:my_app/screens/orders_screen.dart';
+import 'package:my_app/screens/port_folio_screen.dart';
 
 class HomeScreen extends StatefulWidget {
-  static const String routeName = '/Home-screen';
+  static const String routeName = '/Home-Screen';
   const HomeScreen({super.key});
 
   @override
@@ -14,9 +17,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List<Widget> pages = [
     const LandingScreen(),
-    const LandingScreen(),
-    const LandingScreen(),
-    const LandingScreen(),
+    const OrdersScreen(),
+    const PortFolioScreen(),
+    const BidsScreen(),
     const LandingScreen(),
   ];
 

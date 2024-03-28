@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/model/stock_details.dart';
-import 'package:my_app/utils/show_dialouge.dart';
+import 'package:my_app/utils/show_snakbar.dart';
 import 'package:my_app/widgets/custom_textfield.dart';
 import 'package:my_app/widgets/stock_tile.dart';
 

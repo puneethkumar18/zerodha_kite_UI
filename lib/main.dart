@@ -16,7 +16,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark(
         useMaterial3: true
       ).copyWith(
-        scaffoldBackgroundColor: const Color.fromRGBO(31, 41, 55, 1)
+        scaffoldBackgroundColor: const Color.fromRGBO(31, 41, 55, 1),
+        appBarTheme: const AppBarTheme(
+          color: Color.fromRGBO(31, 41, 55, 1),
+        )
       ),
       onGenerateRoute: (settings) => generateRoute(settings),
       home: const HomeScreen(),

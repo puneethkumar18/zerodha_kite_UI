@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/model/stock_details.dart';
-import 'package:my_app/utils/show_dialouge.dart';
-import 'package:my_app/widgets/custom_textfield.dart';
-import 'package:my_app/widgets/stock_tile.dart';
 import 'package:my_app/widgets/whishlist_page.dart';
 
 class LandingScreen extends StatefulWidget {
@@ -37,7 +34,6 @@ void onTap(){
       length: 7,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: const Color.fromRGBO(31, 41, 55, 1),
           centerTitle: false,
           actions: const [
             Icon(
@@ -56,14 +52,18 @@ void onTap(){
               fontWeight: FontWeight.bold,
             ),
           ),
-          bottom: const TabBar(
+          bottom:  TabBar(
             dividerColor: Colors.transparent,
             isScrollable: true,
             tabAlignment: TabAlignment.start,
             indicatorSize: TabBarIndicatorSize.tab,
             indicatorColor: Colors.blueAccent,
             labelColor: Colors.blueAccent,
-            tabs: [
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            onTap: (value){
+
+            },
+            tabs: const [
               Tab(
                 text: "Watchlist 1",
                 height: 50,
