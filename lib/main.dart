@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/route.dart';
-import 'package:my_app/screens/home_screen.dart';
+import 'package:zerodha_kite_app/route.dart';
+import 'package:zerodha_kite_app/screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());

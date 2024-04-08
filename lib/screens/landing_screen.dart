@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/model/stock_details.dart';
-import 'package:my_app/widgets/whishlist_page.dart';
+import 'package:zerodha_kite_app/model/stock_details.dart';
+import 'package:zerodha_kite_app/widgets/whishlist_page.dart';
 
 class LandingScreen extends StatefulWidget {
   static const String routeName = '/landing-page';

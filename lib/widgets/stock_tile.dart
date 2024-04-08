@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/model/stock_details.dart';
+import 'package:zerodha_kite_app/model/stock_details.dart';
 
 class StockTile extends StatelessWidget {
   final StockDetails stock;

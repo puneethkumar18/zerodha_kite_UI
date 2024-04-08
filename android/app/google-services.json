@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "403050248574",
+    "project_id": "zerodh-kite-app",
+    "storage_bucket": "zerodh-kite-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:403050248574:android:d07f9b032de31c006e1b2f",
+        "android_client_info": {
+          "package_name": "com.example.my_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtZE_ViSFU61b_-YNsXu9SMtPNVIyj_Mc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:403050248574:android:2ad7a1ba40fd85536e1b2f",
+        "android_client_info": {
+          "package_name": "com.example.zerodha_kite_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtZE_ViSFU61b_-YNsXu9SMtPNVIyj_Mc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

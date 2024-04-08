@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/model/stock_details.dart';
-import 'package:my_app/utils/show_snakbar.dart';
-import 'package:my_app/widgets/custom_textfield.dart';
-import 'package:my_app/widgets/stock_tile.dart';
+import 'package:zerodha_kite_app/model/stock_details.dart';
+import 'package:zerodha_kite_app/utils/show_snakbar.dart';
+import 'package:zerodha_kite_app/widgets/custom_textfield.dart';
+import 'package:zerodha_kite_app/widgets/stock_tile.dart';
 
 class WishlistPage extends StatelessWidget {
   final VoidCallback onTap;
@@ -53,7 +53,7 @@ class WishlistPage extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 20,right: 16,left: 16),
                   child: CustomTextField( 
                     onTap: (){
-                      const ShowDialouge();
+                      showSnackBar(message: '', context: context);
                     },
                   ),
                 ),

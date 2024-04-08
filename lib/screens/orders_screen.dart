@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/widgets/orders_page.dart';
+import 'package:zerodha_kite_app/widgets/orders_page.dart';
 
 class OrdersScreen extends StatefulWidget {
   const OrdersScreen({super.key});

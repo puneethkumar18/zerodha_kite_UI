@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/screens/bids_screen.dart';
-import 'package:my_app/screens/landing_screen.dart';
-import 'package:my_app/screens/orders_screen.dart';
-import 'package:my_app/screens/port_folio_screen.dart';
+import 'package:zerodha_kite_app/screens/bids_screen.dart';
+import 'package:zerodha_kite_app/screens/landing_screen.dart';
+import 'package:zerodha_kite_app/screens/orders_screen.dart';
+import 'package:zerodha_kite_app/screens/port_folio_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = '/Home-Screen';
