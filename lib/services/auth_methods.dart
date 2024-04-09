@@ -41,15 +41,6 @@ class FirebaseAuthMethods {
           email: email,
           password: password,
         );
-        model.User user = model.User(
-          uid: '',
-          name: '',
-          balance: 0,
-          email: email,
-          password: password,
-          wathclist: [],
-        );
-        await FirestoreMethods().firestore.collection('users').doc(user.uid).set(user.toJson());
       }
     } catch (e) {
       showSnackBar(message: e.toString(), context: context);

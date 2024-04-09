@@ -2,10 +2,12 @@ import 'dart:convert';
 
 
 class StockDetails {
+  late String sid;
   late String name;
   late double price;
   late String category;
   StockDetails({
+    required this.sid,
     required this.name,
     required this.price,
     required this.category,
@@ -17,6 +19,7 @@ class StockDetails {
     result.addAll({'name': name});
     result.addAll({'price': price});
     result.addAll({'category': category});
+    result.addAll({'sid': sid});
   
     return result;
   }
@@ -26,10 +29,15 @@ class StockDetails {
       name: map['name'],
       price: map['price'],
       category: map['category'],
+      sid: map['sid'],
     );
   }
 
-  String toJson() => json.encode(toMap());
+  Map<String,dynamic> toJson() => {
+    "name":name,
+    "price":price,
+    "category":category,
+  };
 
   factory StockDetails.fromJson(String source) => StockDetails.fromMap(json.decode(source));
 
@@ -39,6 +47,7 @@ class StockDetails {
     String? category,
   }) {
     return StockDetails(
+      sid: sid,
       name: name ?? this.name,
       price: price ?? this.price,
       category: category ?? this.category,

@@ -13,10 +13,10 @@ class LandingScreen extends StatefulWidget {
 class _LandingScreenState extends State<LandingScreen> {
   final TextEditingController searchController = TextEditingController();
   List<StockDetails> stocks = [
-    StockDetails(name: "IDFC", price: 110.40, category: "NSE"),
-    StockDetails(name: "IRFC", price: 140.95, category: "NSE"),
-    StockDetails(name: "JIOFIN", price: 344.65, category: "NSE"),
-    StockDetails(name: "ASIANPAITS", price: 2841.50, category: "NSE"),
+    StockDetails(sid:'',name: "IDFC", price: 110.40, category: "NSE"),
+    StockDetails(sid: '', name: "IRFC", price: 140.95, category: "NSE"),
+    StockDetails(sid: '', name: "JIOFIN", price: 344.65, category: "NSE"),
+    StockDetails(sid: '', name: "ASIANPAITS", price: 2841.50, category: "NSE"),
   ];
 
   @override
