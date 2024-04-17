@@ -6,7 +6,15 @@ import 'package:zerodha_kite_app/services/auth_methods.dart';
 import 'package:zerodha_kite_app/utils/show_snakbar.dart';
 
 class UserProvider extends ChangeNotifier {
-  late model.User _user;
+  late model.User _user = model.User(
+    uid: '',
+    name: '',
+    balance: 0,
+    email: '',
+    password: '',
+    watchlist: [],
+  );
+
   final FirebaseAuthMethods _authMethods = FirebaseAuthMethods();
 
   model.User get user => _user;
@@ -21,7 +29,7 @@ class UserProvider extends ChangeNotifier {
   }) async {
     try {
       model.User user = await _authMethods.getUserDetails(context: context);
-      _user = user ;
+      _user = user;
       notifyListeners();
     } catch (e) {
       showSnackBar(

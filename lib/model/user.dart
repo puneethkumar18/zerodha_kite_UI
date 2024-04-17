@@ -6,13 +6,14 @@ class User {
   late double balance;
   late String email;
   late String password;
-  
+  late List<String> watchlist;
   User({
     required this.uid,
     required this.name,
     required this.balance,
     required this.email,
     required this.password,
+    required this.watchlist
   });
 
   static User fromSnap(DocumentSnapshot snap) {
@@ -24,6 +25,7 @@ class User {
       balance: snapshot['balance'],
       email: snapshot['email'],
       password: snapshot['password'],
+      watchlist : snapshot['watchlist']
     );
   }
 

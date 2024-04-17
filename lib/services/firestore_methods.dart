@@ -23,6 +23,7 @@ class FirestoreMethods {
         balance: 0,
         email: email,
         password: password,
+        watchlist: []
       );
       await FirestoreMethods()
           .firestore
