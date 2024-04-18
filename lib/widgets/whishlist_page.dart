@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:zerodha_kite_app/model/stock_details.dart';
-import 'package:zerodha_kite_app/utils/show_snakbar.dart';
-import 'package:zerodha_kite_app/widgets/custom_textfield.dart';
 import 'package:zerodha_kite_app/widgets/stock_tile.dart';
 
 class WishlistPage extends StatelessWidget {
@@ -49,8 +47,8 @@ class WishlistPage extends StatelessWidget {
                     },
                   ),
                 ),
-                 Padding(
-                  padding: const EdgeInsets.only(top: 20,right: 16,left: 16),
+                 const Padding(
+                  padding:  EdgeInsets.only(top: 20,right: 16,left: 16),
                   child: Column(
                     
                   )

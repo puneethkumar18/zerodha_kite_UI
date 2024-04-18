@@ -8,6 +8,7 @@ import 'package:zerodha_kite_app/provider/notification_provider.dart';
 import 'package:zerodha_kite_app/provider/user_provider.dart';
 import 'package:zerodha_kite_app/route.dart';
 import 'package:zerodha_kite_app/screens/home_screen.dart';
+import 'package:zerodha_kite_app/screens/search_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,7 +23,7 @@ Future<void> main() async {
       providers: [
         ChangeNotifierProvider(create: (_) => UserProvider()),
         Provider(create: (_) => NotificationProvider()),
-        Provider(create: (context) => CustomSearchProvider()),
+        ChangeNotifierProvider(create: (context) => CustomSearchProvider()),
       ],
       child: const MyApp(),
     ),
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
             color: Color.fromRGBO(31, 41, 55, 1),
           )),
       onGenerateRoute: (settings) => generateRoute(settings),
-      home: user.uid.isEmpty ?  const HomeScreen() : const  HomeScreen()  ,
+      home: user.uid.isEmpty ?  const SearchScreen() : const  HomeScreen()  ,
     );
   }
 }

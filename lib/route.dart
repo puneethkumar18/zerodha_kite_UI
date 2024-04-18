@@ -8,7 +8,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (_) => const LandingScreen(),
       );
-    case LandingScreen.routeName:
+    case LoginScreen.routeName:
       return MaterialPageRoute(
         builder: (_) => const LoginScreen(),
       );

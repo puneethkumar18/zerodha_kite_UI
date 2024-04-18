@@ -1,8 +1,6 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:zerodha_kite_app/provider/user_provider.dart';
 import 'package:zerodha_kite_app/services/auth_methods.dart';
 import 'package:zerodha_kite_app/utils/show_snakbar.dart';
 import 'package:zerodha_kite_app/widgets/custom_text_button.dart';
