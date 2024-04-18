@@ -4,7 +4,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:zerodha_kite_app/model/user.dart' as model;
+import 'package:zerodha_kite_app/provider/user_provider.dart';
 import 'package:zerodha_kite_app/services/firestore_methods.dart';
 import 'package:zerodha_kite_app/utils/show_snakbar.dart';
 
@@ -35,13 +37,15 @@ class FirebaseAuthMethods {
     required String password,
     required BuildContext context,
   }) async {
+   
     try {
-      if (email.isNotEmpty || password.isNotEmpty) {
         await _auth.createUserWithEmailAndPassword(
           email: email,
           password: password,
         );
-      }
+      
+    } on FirebaseAuthException catch (e) {
+      showSnackBar(message: e.toString(), context: context);
     } catch (e) {
       showSnackBar(message: e.toString(), context: context);
     }
@@ -57,7 +61,23 @@ class FirebaseAuthMethods {
         email: email,
         password: password,
       );
-    } catch (e) {
+      model.User user = model.User(
+        uid: '',
+        name: '',
+        balance: 0,
+        email: email,
+        password: password,
+        watchlist: [],
+      );
+      Provider.of<UserProvider>(context).set(user);
+      showSnackBar(message: "Account has created !..", context: context);
+
+    }on FirebaseAuthException catch (e) {
+      showSnackBar(
+        message: e.toString(),
+        context: context,
+      );
+    } catch(e){
       showSnackBar(
         message: e.toString(),
         context: context,

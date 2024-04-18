@@ -51,11 +51,9 @@ class WishlistPage extends StatelessWidget {
                 ),
                  Padding(
                   padding: const EdgeInsets.only(top: 20,right: 16,left: 16),
-                  child: CustomTextField( 
-                    onTap: (){
-                      showSnackBar(message: '', context: context);
-                    },
-                  ),
+                  child: Column(
+                    
+                  )
                 ),
               ],
             );

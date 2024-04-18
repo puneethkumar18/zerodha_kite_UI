@@ -8,7 +8,6 @@ import 'package:zerodha_kite_app/provider/notification_provider.dart';
 import 'package:zerodha_kite_app/provider/user_provider.dart';
 import 'package:zerodha_kite_app/route.dart';
 import 'package:zerodha_kite_app/screens/home_screen.dart';
-import 'package:zerodha_kite_app/screens/login_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -45,7 +44,7 @@ class MyApp extends StatelessWidget {
             color: Color.fromRGBO(31, 41, 55, 1),
           )),
       onGenerateRoute: (settings) => generateRoute(settings),
-      home: user.uid.isEmpty ?  const LoginScreen() : const  HomeScreen()  ,
+      home: user.uid.isEmpty ?  const HomeScreen() : const  HomeScreen()  ,
     );
   }
 }

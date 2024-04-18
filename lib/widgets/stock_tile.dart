@@ -49,6 +49,7 @@ class StockTile extends StatelessWidget {
               color: Colors.white54,
             ),
           ),
+          
         ],
       ),
     );

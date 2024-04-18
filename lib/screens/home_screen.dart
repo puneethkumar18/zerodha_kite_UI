@@ -3,6 +3,7 @@ import 'package:zerodha_kite_app/screens/bids_screen.dart';
 import 'package:zerodha_kite_app/screens/landing_screen.dart';
 import 'package:zerodha_kite_app/screens/orders_screen.dart';
 import 'package:zerodha_kite_app/screens/port_folio_screen.dart';
+import 'package:zerodha_kite_app/screens/profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = '/Home-Screen';
@@ -20,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
     const OrdersScreen(),
     const PortFolioScreen(),
     const BidsScreen(),
-    const LandingScreen(),
+    const ProfileScreen(),
   ];
 
   void onTap(index) {

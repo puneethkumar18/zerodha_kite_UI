@@ -24,6 +24,12 @@ class UserProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  void setEmailAnsPassword(String email,String password) {
+    _user.email = email;
+    _user.password = password;
+    notifyListeners();
+  }
+
   Future<void> refreshUser({
     required BuildContext context,
   }) async {

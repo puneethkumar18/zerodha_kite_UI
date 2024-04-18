@@ -1,67 +1,49 @@
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
-  final VoidCallback onTap;
+  final String text;
+  final IconData? icon;
+  final TextEditingController controller;
   const CustomTextField({
-    required this.onTap,
+    required this.controller,
+    required this.text,
+    this.icon,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 50,
-      width: 400,
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      decoration: BoxDecoration(
-        color: const Color.fromRGBO(50, 64, 81, 1),
-        borderRadius: BorderRadius.circular(4),
-      ),
-      child: Row(
-        children: [
-          const SizedBox(
-            width: 5,
+    return TextFormField(
+      keyboardType: TextInputType.text,
+      decoration: InputDecoration(
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 20,
+          vertical: 20,
+        ),
+        label: Text(
+          text,
+          style: const TextStyle(
+            fontSize: 18,
+            color: Colors.blueGrey,
           ),
-          const Icon(
-            Icons.search,
-            color: Colors.white38,
+        ),
+        suffixIcon: Icon(
+          icon,
+          size: 32,
+          color: const Color.fromARGB(255, 133, 154, 164),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: const BorderSide(
+            color: Colors.blueGrey,
           ),
-          const SizedBox(
-            width: 10,
+          borderRadius: BorderRadius.circular(4),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: const BorderSide(
+            color: Colors.blueGrey,
           ),
-          GestureDetector(
-            child: const Text(
-              "Search & add",
-              style: TextStyle(
-                color: Colors.white54,
-              ),
-            ),
-          ),
-          GestureDetector(
-            child: const SizedBox(
-              width: 120,
-            ),
-          ),
-          const Text(
-            "4/50",
-            style: TextStyle(
-              color: Colors.white54,
-            ),
-          ),
-          const VerticalDivider(
-            width: 30,
-            indent: 15,
-            endIndent: 15,
-            color: Colors.white54,
-          ),
-          GestureDetector(
-            onTap: onTap,
-            child: const Icon(
-              Icons.filter_list_outlined,
-              color: Colors.white54,
-            ),
-          ),
-        ],
+          borderRadius: BorderRadius.circular(4),
+        ),
       ),
     );
   }
