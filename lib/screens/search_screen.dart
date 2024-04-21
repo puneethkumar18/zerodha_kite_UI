@@ -1,11 +1,13 @@
 // ignore_for_file: unnecessary_null_comparison
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:zerodha_kite_app/provider/custom_search_provider.dart';
 import 'package:zerodha_kite_app/widgets/profile_tile.dart';
 
 class SearchScreen extends StatefulWidget {
+  static const String routeName = '/search-screen';
   const SearchScreen({super.key});
 
   @override
@@ -33,11 +35,11 @@ class _SearchScreenState extends State<SearchScreen> {
 
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              TextFormField(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 50,
+              child: TextFormField(
                 onChanged: (val) {
                   if (val.isNotEmpty) {
                     customSearchProvider(renderUI: false).setQuery(text: val);
@@ -46,53 +48,40 @@ class _SearchScreenState extends State<SearchScreen> {
                     customSearchProvider(renderUI: false).clearQuered();
                   }
                 },
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  contentPadding: const EdgeInsets.symmetric(
-                    horizontal: 20,
-                    vertical: 20,
-                  ),
-                  label: const Text(
-                    "Search ...",
-                    style: TextStyle(
-                      fontSize: 18,
-                      color: Colors.blueGrey,
-                    ),
-                  ),
-                  suffixIcon: const Icon(
-                    Icons.search,
-                    size: 32,
-                    color: Color.fromARGB(255, 133, 154, 164),
+                decoration: const InputDecoration(
+                  hintText: "Search eg: infy bse,nifty fut",
+                  prefixIcon: Icon(
+                    Icons.arrow_back,
+                    size: 34,
+                    color: Colors.white,
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(
-                      color: Colors.blueGrey,
-                    ),
-                    borderRadius: BorderRadius.circular(4),
+                    borderSide: BorderSide(width: 0, color: Colors.transparent),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(
-                      color: Colors.blueGrey,
-                    ),
-                    borderRadius: BorderRadius.circular(4),
+                    borderSide: BorderSide(width: 0, color: Colors.transparent),
                   ),
                 ),
               ),
-              ListView.builder(
-                shrinkWrap: true,
-                itemCount: listSoredted.length,
-                itemBuilder: (context, index) {
-                  String stock = listSoredted[index];
-                  return GestureDetector(
-                    onTap: (){
-                      customSearchProvider(renderUI: false).recentSearched(stock);
-                    },
-                    child: ProfileTile(text: stock),
-                  );
-                },
-              ),
-            ],
-          ),
+            ),
+            const Divider(),
+            const SizedBox(
+              height: 5,
+            ),
+            ListView.builder(
+              shrinkWrap: true,
+              itemCount: listSoredted.length,
+              itemBuilder: (context, index) {
+                String stock = listSoredted[index];
+                return GestureDetector(
+                  onTap: () {
+                    customSearchProvider(renderUI: false).recentSearched(stock);
+                  },
+                  child: ProfileTile(text: stock),
+                );
+              },
+            ),
+          ],
         ),
       ),
     );

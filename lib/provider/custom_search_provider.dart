@@ -8,13 +8,16 @@ class CustomSearchProvider extends ChangeNotifier {
     "IDFC",
     "ASIANPAITS",
     "JIO",
-    "IRFC"
+    "IRFC",
+    "RELIENCE",
+    "GAIL",
+    "HDFC"
   ];
 
   String? get query => _query;
 
   void setQuery({required String text}) {
-    _query = text;
+    _query = text.toUpperCase();
     notifyListeners();
   }
 
@@ -34,8 +37,15 @@ class CustomSearchProvider extends ChangeNotifier {
 
   void recentSearched(String stock){
     debugPrint(stock);
-    if(!recentSearch.contains(stock)){
-      recentSearch.add(stock);
+    if(recentSearch.length < 3){
+      if (!recentSearch.contains(stock)) {
+        recentSearch.add(stock);
+      }
+    }else{
+      recentSearch.removeLast();
+      if (!recentSearch.contains(stock)) {
+        recentSearch.add(stock);
+      }
     }
     notifyListeners();
   }

@@ -8,7 +8,9 @@ import 'package:zerodha_kite_app/provider/notification_provider.dart';
 import 'package:zerodha_kite_app/provider/user_provider.dart';
 import 'package:zerodha_kite_app/route.dart';
 import 'package:zerodha_kite_app/screens/home_screen.dart';
-import 'package:zerodha_kite_app/screens/search_screen.dart';
+import 'package:zerodha_kite_app/screens/login_screen.dart';
+import 'package:zerodha_kite_app/screens/profile_screen.dart';
+import 'package:zerodha_kite_app/screens/splash_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,7 +37,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final user = Provider.of<UserProvider>(context, listen: true).user;
+    //final user = Provider.of<UserProvider>(context, listen: true).user;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Zerodha kite app',
@@ -45,7 +47,8 @@ class MyApp extends StatelessWidget {
             color: Color.fromRGBO(31, 41, 55, 1),
           )),
       onGenerateRoute: (settings) => generateRoute(settings),
-      home: user.uid.isEmpty ?  const SearchScreen() : const  HomeScreen()  ,
+      initialRoute: SplashScreen.routeName,
+      
     );
   }
 }
